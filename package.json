@@ -2,7 +2,7 @@
   "name": "kj-resource-redis",
   "version": "0.0.1",
   "description": "Redis resource creation for the kj webapp framework.",
-  "author": "Ron Elliott <ron@elliott.im>",
+  "author": "Ron Elliott <ronaldbelliott@gmail.com>",
   "license": "ISC",
   "keywords": [
     "webapp",
