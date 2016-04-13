@@ -1,10 +1,9 @@
 'use strict';
 
-var extend = require('extend'),
-    is = require('is'),
-    prequire = require('parent-require'),
-    redis = prequire('redis'),
-    redisUrl = require('redis-url');
+const is = require('is'),
+      prequire = require('parent-require'),
+      redis = prequire('redis'),
+      redisUrl = require('redis-url');
 
 module.exports = function($opts) {
     var enabled = is.defined($opts.enabled) ? $opts.enabled : true,
@@ -22,7 +21,7 @@ module.exports = function($opts) {
         }
 
         var cfg = redisUrl.parse(uri),
-            opts = extend(true, { auth_pass: cfg.password }, cfg.query),
+            opts = Object.assign({ auth_pass: cfg.password }, cfg.query),
             client = redis.createClient(cfg.port, cfg.hostname, opts);
 
         client.select(cfg.database, function(err) {
